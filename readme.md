@@ -12,8 +12,8 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 
 | Day   | Deliverable                                                      | Status     |
 | ----- | ---------------------------------------------------------------- | ---------- |
-| Day 1 | Project description                                              | Incomplete |
-| Day 1 | Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Incomplete |
+| Day 1 | Project description                                              | Completed  |
+| Day 1 | Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Completed  |
 | Day 1 | Begin backend build (All auth, Data models)                      | Incomplete |
 | Day 1 | Create comma-separated seed data - import into Python            | Incomplete |
 | Day 2 | Finish backend build (Complete CRUD routes for listings)         | Incomplete |
@@ -49,8 +49,8 @@ The backend is built with Python and PostgreSQL using Django.
 - [Realtor Login](https://res.cloudinary.com/infiniteloom/image/upload/v1599963621/Unit%2004%20-%20Project%20-%20Haven/Mobile/Mobile_Realtor_Login_e5u9bm.png)
 - [Realtor Register](https://res.cloudinary.com/infiniteloom/image/upload/v1599963622/Unit%2004%20-%20Project%20-%20Haven/Mobile/Mobile_Realtor_Register_byhrxo.png)
 - [Listings - List View](https://res.cloudinary.com/infiniteloom/image/upload/v1599963622/Unit%2004%20-%20Project%20-%20Haven/Mobile/Mobile_Listings_ed90y4.png)
-- [Realtor Admin Panel]()
-- [Create Listings Modal]()
+- [Realtor Admin Panel](https://res.cloudinary.com/infiniteloom/image/upload/v1600034789/Unit%2004%20-%20Project%20-%20Haven/Mobile/Mobile_Admin_List_jnwlt0.png)
+- [Create Listings Modal](https://res.cloudinary.com/infiniteloom/image/upload/v1600033539/Unit%2004%20-%20Project%20-%20Haven/Mobile/Mobile_Create_Listings_View_vadrhx.png)
 
 
 #### Web:
@@ -62,19 +62,18 @@ The backend is built with Python and PostgreSQL using Django.
 - [Realtor Register](https://res.cloudinary.com/infiniteloom/image/upload/v1599963502/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Realtor_Register_mwyvvw.png)
 - [Listings - List View](https://res.cloudinary.com/infiniteloom/image/upload/v1599966783/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Listings_List_ejrkp2.png)
 - [Listings - Map View](https://res.cloudinary.com/infiniteloom/image/upload/v1599966391/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Listings_Map_View_User_Menu_Expanded_oszn5d.png)
-- [Realtor Admin Panel]()
-- [Create Listings Modal]()
+- [Realtor Admin Panel](https://res.cloudinary.com/infiniteloom/image/upload/v1600034781/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Admin_List_pvqb7k.png)
+- [Create Listings Modal](https://res.cloudinary.com/infiniteloom/image/upload/v1600033562/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Create_Listings_View_ffzbfd.png)
 
 #### Tablet:
 - [Home Page](https://res.cloudinary.com/infiniteloom/image/upload/v1599963504/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Landing_uqntdt.png)
-- [Home Page - User Menu Expanded]()
 - [Buyer Login](https://res.cloudinary.com/infiniteloom/image/upload/v1599963503/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Buyer_Login_tclvje.png)
 - [Buyer Register](https://res.cloudinary.com/infiniteloom/image/upload/v1599963504/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Buyer_Register_rh0l2c.png)
 - [Realtor Login](https://res.cloudinary.com/infiniteloom/image/upload/v1599963503/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Realtor_Login_d1pqyb.png)
 - [Realtor Register](https://res.cloudinary.com/infiniteloom/image/upload/v1599963502/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Realtor_Register_mwyvvw.png)
-- [Listings - List View]()
-- [Realtor Admin Panel]()
-- [Create Listings Modal]()
+- [Listings - List View](https://res.cloudinary.com/infiniteloom/image/upload/v1599966783/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Listings_List_ejrkp2.png)
+- [Realtor Admin Panel](https://res.cloudinary.com/infiniteloom/image/upload/v1600034781/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Admin_List_pvqb7k.png)
+- [Create Listings Modal](https://res.cloudinary.com/infiniteloom/image/upload/v1600033562/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Create_Listings_View_ffzbfd.png)
 
 
 ##User Stories
