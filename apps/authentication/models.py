@@ -31,7 +31,7 @@ class UserManager(BaseUserManager):
         # create the user object
         # self.normalize_email is inbuilt method to django that strips white space and lowercases
         user = self.model(
-            username=username,
+            username= username,
             email=self.normalize_email(email),
             first_name=first_name,
             last_name=last_name,
@@ -63,6 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # unique ensures the username doesn't already exist in database
     # these are all built in methods to the AbstractBaseUser
     email = models.EmailField(db_index=True, unique=True)
+    username = models.CharField(db_index=True, max_length=255, unique=True)
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
     is_active = models.BooleanField(default=True)
