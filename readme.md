@@ -4,6 +4,8 @@
 
 Link to completed project [here](https://haven-homes.netlify.app/)
 
+Link to heroku [here](https://lt-project4-backend.herokuapp.com/)
+
 Link to project frontend on GitHub [here](https://github.com/infiniteloom/project4-frontend)
 
 Link to project backend on GitHub [here](https://github.com/infiniteloom/project4-backend)
@@ -165,6 +167,8 @@ The backend functionality of Haven.com is divided into two separate lists: MPV a
 ## Additional Libraries
 
 - Geopy (create coordinates from listing's street addresses and connect with Open Street Map )
+- Django REST Framework 
+- Django REST Framework JWT
 
 ## Code Snippet
 
