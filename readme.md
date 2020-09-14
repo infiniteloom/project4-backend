@@ -15,6 +15,9 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | Day 1 | Project description                                              | Completed  |
 | Day 1 | Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Completed  |
 | Day 1 | Authorization                                                    | Completed  |
+| Day 1 | Create serializer for Realtor                                    | Incomplete |
+| Day 1 | Create serializer for Buyer                                      | Incomplete |
+| Day 1 | Create serializer for Listing                                    | Incomplete |
 | Day 1 | Create model for Realtor                                         | Incomplete |
 | Day 1 | Create model for Buyer                                           | Incomplete |
 | Day 1 | Create model for Listing                                         | Incomplete |

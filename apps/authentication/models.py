@@ -4,6 +4,7 @@ from django.contrib.auth.models import (
 )
 # allows us to access the JWT settings
 from rest_framework_jwt.settings import api_settings
+
 # sets up the JWT payload (data sent with token)
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
@@ -15,7 +16,7 @@ https://docs.djangoproject.com/en/3.0/ref/contrib/auth/#django.contrib.auth.mode
 # Create your models here.
 
 
-# allos us to create a regular user or a superuser
+# allows us to create a regular user or a superuser
 class UserManager(BaseUserManager):
 
     def create_user(self, username, email, password=None, first_name=None, last_name=None):
@@ -57,15 +58,15 @@ class UserManager(BaseUserManager):
 
 # This class is for people who are using the site, logging in etc. Not for superusers
 class User(AbstractBaseUser, PermissionsMixin):
+
     # db_index gives the user a unique index in the database
     # unique ensures the username doesn't already exist in database
     # these are all built in methods to the AbstractBaseUser
-    username = models.CharField(db_index=True, max_length=255, unique=True)
     email = models.EmailField(db_index=True, unique=True)
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
     is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -75,8 +76,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     # tells Django that the first UserManager class will manage objects of this type
     objects = UserManager()
 
+
+
     def __str__(self):
-        return self.username
+        return self.email
 
     @property
     def token(self):
