@@ -70,6 +70,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    region = models.CharField(max_length=100, null=True)
+    city = models.CharField(max_length=100, null=True)
+    zip = models.IntegerField(null=True)
+    company = models.CharField(max_length=100, null=True)
+    user_type = models.CharField(db_index=True, max_length=255)
+    # is_buyer = models.BooleanField(default=False)
+    # is_realtor = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email'] # this is an array, could have more required fields

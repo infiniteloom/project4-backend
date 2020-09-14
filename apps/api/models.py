@@ -1,16 +1,16 @@
 from django.db import models
 from apps.authentication.models import User
 
-
+"""
 # Create your models here.
 class RealtorUser(User):
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     region = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     zip = models.IntegerField()
     company = models.CharField(max_length=100)
 
-    listings = models.ManyToManyField('Listing')
+    #listings = models.OneToManyField('Listing') ########################
 
     def __str__(self):
         return self.first_name + " " + self.last_name
@@ -20,14 +20,14 @@ class RealtorUser(User):
 
 
 #### Buyer Model
-class BuyerUser(User):
-
-    favorites = models.ManyToManyField('Listing')
+class BuyerUser(User):  ########### INHERITANCE?
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    #favorites = models.ManyToManyField('Listing') #####################
 
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-
+"""
 
 
 #### Listing Model
@@ -45,11 +45,12 @@ class Listing(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     images = models.TextField()
+    interested_buyers = models.ManyToManyField(User)
 
-    created_at = models.DateTimeField(auto_now_add= True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
-    realtor = models.ForeignKey(RealtorUser, on_delete=models.CASCADE)
+    realtor = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
     def __str__(self):
