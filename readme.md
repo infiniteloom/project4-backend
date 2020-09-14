@@ -167,6 +167,8 @@ The backend functionality of Haven.com is divided into two separate lists: MPV a
 ## Additional Libraries
 
 - Geopy (create coordinates from listing's street addresses and connect with Open Street Map )
+- Django REST Framework 
+- Django REST Framework JWT
 
 ## Code Snippet
 
