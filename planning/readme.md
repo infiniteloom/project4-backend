@@ -79,56 +79,40 @@ The backend is built with Python and PostgreSQL using Django.
 
 ##User Stories
 
-###User types:
-- **Public users** may browse available homes but will not be able to save favorite homes without registering for an account. 
-- **Realtor users** may sign up to create, delete or update a listing and manage their listings via a simple admin panel.
-- **Home buyer users** may sign up to browse available homes and save their favorite homes to a list where they can also append personal notes to each home. 
+#### Realtor Model
+Realtor Model Properties:
+- region = dropdown menu 
+- city = models.CharField(max_length=100)
+- zip = models.IntField(max_length=10)
+- name = models.CharField(max_length=100)
+- company = models.CharField(max_length=100)
+- listings = listings belong to Realtor, referenced relationship
 
-<br/>
+#### Buyer Model
+Buyer Model Properties:
+- name = models.CharField(max_length=100)
+- email = models.CharField(max_length=100)
+- favorites = favorite a listing, listing belongs to Buyer?
 
-#### Public User
-Angelica, the casual browser:
 
-Angelica has a dream to move to a house with a garden “some day.” She is intrigued by aesthetics and loves to casually browse the homes on Haven.com while she suns on her back porch. She is not a serious buyer and therefore does not feel motivated to sign up or reach out to agents for any of her favorite homes. 
+#### Listing Model
+Listing Model Properties:
+- type = dropdown menu (house, land, condo, apartment)
+- city = models.CharField(max_length=100)
+- state = drop down menu, 2 letters
+- zip = models.IntegerField(max_length=10)
+- street = models.CharField(max_length=100)
+- year_built = models.IntegerField(max_length=4)
+- bed = drop down menu could be cool
+- bath = drop down menu
+- home_size = models.IntegerField(max_length=7) (sq feet)
+- lot_size = models.IntegerField(max_length=7)   (sq feet)
+- price =  models.IntegerField(max_length=10)   
+- description = models.TextField()
+- images = file drop!!!!!!!!!!!!!!!
+- **created_at (if less than 14 days old, add a ‘new’ sticker)
+- created_by = listings belong to Realtor
 
-Angelica periodically returns to Haven.com to browse but does not have any further interest in engaging with the platform’s deeper features… yet!
-
-<br/>
-
-#### Realtor User
-Rachel, the realtor:
-
-Rachel is a realtor in Ulster County, New York. Rachel works for Halstead Realtors, Inc. and would like to increase the exposure of the listings she manages. She hears of Haven.com and browses the existing listings on her mobile phone. She feels like the aesthetic is clean and highlights the featured homes well. She decides to create an account. Rachel navigates to the menu and selects ‘Sign Up’ and finds the prompt in the modal footer, “Are you a real estate agent? Register here” and continues to fill in the required fields. 
-
-Now that Rachel is signed up for the service,  she sees the options to “Create New Listing,” “View Current Listings” in her top nav bar. She selects “Create New Listing” and a modal pops up. 
-
-To create a new listing, Rachel fills in the form with all the required fields and clicks “Publish Listing” to post her first home listing on Haven! The modal displays a message “Congratulations, your listing is now live.” and offers the options to “View Current Listings,” “Create Another Listing” or “Done” which returns to the home page that shows all listings from all realtors. 
-
-Rachel creates three more listings for the homes she is currently representing then selects “View Current Listings” to confirm that everything went according to plan.  She sees her listings displayed in a list view with a thumbnail in the far left column, home details in the middle column and “Edit” and “Delete” hypertext to the far right, per listing. 
-
-Oops! Rachel realized she mistakenly listed her largest home as a 2 bedroom instead of a 5 bedroom. Rachel selectes “Edit,” changes the bedroom count to 5 in the pop up modal then clicks “Save Changes.” Phew! That was a close one. She is happy with her listings and closes her computer to make lunch. 
-
-After lunch, Rachel gets word from a client that they are no longer interested in selling their house. Bummer! After discussing and reminding them they can always reach back out if they change their mind, she goes back to Haven.com and navigates to the admin panel where she can view all her listings. She finds the house and sighs as she clicks “Delete.” A modal pops up and asks, “Are you sure you want to delete this listing? This action cannot be undone.” and Rachel selects the button that reads, “Yes, I’m sure.” And that is that. 
-
-<br/>
-
-#### Home Buyer User
-
-Cleo, the motivated buyer:
-
- Cleo is a first-time home buyer who is currently browsing the real estate market in Hudson Valley because he and his girlfriend have bothb een working from their one-bedroom apartment since the pandemic hit in March and are excited about the idea of being able to walk outside during lunch breaks and be closer to nature. 
-
-Cleo has used a few popular real estate apps but felt frustrated that he couldn’t leave personal notes on his favorite houses and felt like he was constantly have to redo the research of what the perks and pitfalls of each home were. 
-
-Cleo hears about Haven.com from a friend who says they offer this capability and he visits the site on his computer. He browses the listings and enjoys the clean layout and straightforward navigation. He particularly enjoys the map view so he can get a better understanding of the area around the homes. 
-
-Cleo sees a house he hasn’t seen yet and presses the heart icon to save it. Whoops! A pop-up modal appears that reads, “Register with your email to save your favorite homes.” He fills in the email and password field and is immediately logged in. The home he likes has been added to his favorites list. 
-
-After a half an hour of browsing and saving more favorite listings, Cleo wants to review all the homes he’s liked so far. He hovers over the user icon in the top right corner of the navigation bar and selects “Saved Homes” in the drop down menu that brings him to a grid view of his favorite homes. 
-
-Each saved listing has an image and details of the home beneath the image as well as a hypertext that reads “Notes +.” He clicks on this text and an empty text field unfurls. He leaves a note, “Solar power but no deck” and clicks save. The text field becomes read-only and closes automatically. 
-
-Cleo really likes one house in particular and would like to speak to an agent about it. He clicks on the link to “Contact Agent” and a modal pops up with an email form. In the footer of the modal, he sees the name of the real estate agent, as well as the agency’s name and phone number. He decides to call them and inquire further about the listing. 
 
 
 
