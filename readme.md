@@ -76,9 +76,9 @@ The backend is built with Python and PostgreSQL using Django.
 - [Create Listings Modal](https://res.cloudinary.com/infiniteloom/image/upload/v1600033562/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Create_Listings_View_ffzbfd.png)
 
 
-##User Stories
+## User Stories
 
-###User types:
+### User types:
 - **Public users** may browse available homes but will not be able to save favorite homes without registering for an account. 
 - **Realtor users** may sign up to create, delete or update a listing and manage their listings via a simple admin panel.
 - **Home buyer users** may sign up to browse available homes and save their favorite homes to a list where they can also append personal notes to each home. 
