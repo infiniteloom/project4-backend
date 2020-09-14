@@ -14,17 +14,22 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | ----- | ---------------------------------------------------------------- | ---------- |
 | Day 1 | Project description                                              | Completed  |
 | Day 1 | Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Completed  |
-| Day 1 | Begin backend build (All auth, Data models)                      | Incomplete |
+| Day 1 | Authorization                                                    | Completed  |
+| Day 1 | Create model for Realtor                                         | Incomplete |
+| Day 1 | Create model for Buyer                                           | Incomplete |
+| Day 1 | Create model for Listing                                         | Incomplete |
+| Day 1 | Create urls for Realtor                                          | Incomplete |
+| Day 1 | Create urls for Buyer                                            | Incomplete |
+| Day 1 | Create urls for Listing                                          | Incomplete |
 | Day 1 | Create comma-separated seed data - import into Python            | Incomplete |
-| Day 2 | Finish backend build (Complete CRUD routes for listings)         | Incomplete |
-| Day 3 | Core Application Structure (HTML, Bootstrap nav and gallery)     | Incomplete |
-| Day 4 | Bootstrap modals - complete login & register for Buyer & Realtor | Incomplete |
-| Day 5 | Bootstrap modals - connect create/edit functionality to backend  | Incomplete |
-| Day 5 | Create Realtor admin list view                                   | Incomplete |
-| Day 6 | CSS styling & fine-tuning UX for error handling & required fields| Incomplete |
-| Day 7 | Add sort/filter features to list view                            | Incomplete |
-| Day 8 | Add Map functionality with Geopy                                 | Incomplete |
-| Day 9 | Final Touches and Present                                        | Incomplete |
+| Day 1 | Connect Buyer and Realtor to Auth                                | Incomplete |
+| Day 2 | 'Create' view for listings                                       | Incomplete |
+| Day 2 | 'Edit' view for listings                                         | Incomplete |
+| Day 2 | 'Destroy' view for listings                                      | Incomplete |
+| Day 2 | 'Index' and get by id views for listings                         | Incomplete |
+| Day 2 | Testing of all end points                                        | Incomplete |
+
+
 
 
 ## Project Description
@@ -37,6 +42,42 @@ Haven is a web application to showcase real estate listings. Haven is available 
 
 The front-end is built with HTML, CSS and JavaScript using Vue.js and Bootstrap. 
 The backend is built with Python and PostgreSQL using Django. 
+
+
+#### Realtor Model
+Realtor Model Properties:
+- region = dropdown menu 
+- city = models.CharField(max_length=100)
+- zip = models.IntField(max_length=10)
+- name = models.CharField(max_length=100)
+- company = models.CharField(max_length=100)
+- listings = listings belong to Realtor, referenced relationship
+
+#### Buyer Model
+Buyer Model Properties:
+- name = models.CharField(max_length=100)
+- email = models.CharField(max_length=100)
+- favorites = favorite a listing, listing belongs to Buyer?
+
+
+#### Listing Model
+Listing Model Properties:
+- type = dropdown menu (house, land, condo, apartment)
+- city = models.CharField(max_length=100)
+- state = drop down menu, 2 letters
+- zip = models.IntegerField(max_length=10)
+- street = models.CharField(max_length=100)
+- year_built = models.IntegerField(max_length=4)
+- bed = drop down menu could be cool
+- bath = drop down menu
+- home_size = models.IntegerField(max_length=7) (sq feet)
+- lot_size = models.IntegerField(max_length=7)   (sq feet)
+- price =  models.IntegerField(max_length=10)   
+- description = models.TextField()
+- images = file drop!!!!!!!!!!!!!!!
+- **created_at (if less than 14 days old, add a ‘new’ sticker)
+- created_by = listings belong to Realtor
+
 
 
 ## Wireframes
@@ -74,44 +115,6 @@ The backend is built with Python and PostgreSQL using Django.
 - [Listings - List View](https://res.cloudinary.com/infiniteloom/image/upload/v1599966783/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Listings_List_ejrkp2.png)
 - [Realtor Admin Panel](https://res.cloudinary.com/infiniteloom/image/upload/v1600034781/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Admin_List_pvqb7k.png)
 - [Create Listings Modal](https://res.cloudinary.com/infiniteloom/image/upload/v1600033562/Unit%2004%20-%20Project%20-%20Haven/Web/Web_Create_Listings_View_ffzbfd.png)
-
-
-
-##User Stories
-
-#### Realtor Model
-Realtor Model Properties:
-- region = dropdown menu 
-- city = models.CharField(max_length=100)
-- zip = models.IntField(max_length=10)
-- name = models.CharField(max_length=100)
-- company = models.CharField(max_length=100)
-- listings = listings belong to Realtor, referenced relationship
-
-#### Buyer Model
-Buyer Model Properties:
-- name = models.CharField(max_length=100)
-- email = models.CharField(max_length=100)
-- favorites = favorite a listing, listing belongs to Buyer?
-
-
-#### Listing Model
-Listing Model Properties:
-- type = dropdown menu (house, land, condo, apartment)
-- city = models.CharField(max_length=100)
-- state = drop down menu, 2 letters
-- zip = models.IntegerField(max_length=10)
-- street = models.CharField(max_length=100)
-- year_built = models.IntegerField(max_length=4)
-- bed = drop down menu could be cool
-- bath = drop down menu
-- home_size = models.IntegerField(max_length=7) (sq feet)
-- lot_size = models.IntegerField(max_length=7)   (sq feet)
-- price =  models.IntegerField(max_length=10)   
-- description = models.TextField()
-- images = file drop!!!!!!!!!!!!!!!
-- **created_at (if less than 14 days old, add a ‘new’ sticker)
-- created_by = listings belong to Realtor
 
 
 
