@@ -17,14 +17,7 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | Day 1 | Begin backend build (All auth, Data models)                      | Incomplete |
 | Day 1 | Create comma-separated seed data - import into Python            | Incomplete |
 | Day 2 | Finish backend build (Complete CRUD routes for listings)         | Incomplete |
-| Day 3 | Core Application Structure (HTML, Bootstrap nav and gallery)     | Incomplete |
-| Day 4 | Bootstrap modals - complete login & register for Buyer & Realtor | Incomplete |
-| Day 5 | Bootstrap modals - connect create/edit functionality to backend  | Incomplete |
-| Day 5 | Create Realtor admin list view                                   | Incomplete |
-| Day 6 | CSS styling & fine-tuning UX for error handling & required fields| Incomplete |
-| Day 7 | Add sort/filter features to list view                            | Incomplete |
-| Day 8 | Add Map functionality with Geopy                                 | Incomplete |
-| Day 9 | Final Touches and Present                                        | Incomplete |
+
 
 
 ## Project Description
