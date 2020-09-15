@@ -1,16 +1,16 @@
 from rest_framework import routers
 from django.urls import path, include
 from django.conf.urls import url
-from apps.api.views import SingleListingView
+from apps.api.views import ListingsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'listing', SingleListingView, basename='listing') # url is /listing
-
-
-urlpatterns=[
-    url(r'listings', SingleListingView.as_view, name='listings')
-]
-
-# urlpatterns = [
-#     path('', include(router.urls))
+router.register(r'listings', ListingsViewSet, basename='listing') # url is /listing
+router.register('realtor',)
+#
+# urlpatterns=[
+#     url('listings/', ListingsViewSet, name='listings')
 # ]
+
+urlpatterns = [
+    path('', include(router.urls))
+]

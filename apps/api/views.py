@@ -10,14 +10,52 @@ from rest_framework.exceptions import(
 )
 
 
-class SingleListingView(generics.RetrieveUpdateDestroyAPIView):
+# class SingleListingView(generics.RetrieveUpdateDestroyAPIView):
+#     serializer_class = ListingSerializer
+#     permission_classes = (IsAuthenticated, User.user_type == 'realtor')
+#     queryset = Listing.objects.all()
+
+
+
+class ListingsViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     serializer_class = ListingSerializer
-    permission_classes = (IsAuthenticated, User.user_type == 'realtor')
+
+    def get_queryset(self):
+        print(" ****************** getquery set is being called ****************** ")
+        queryset = Listing.objects.all()
+        return queryset
+
+    def create(self, request, *args, **kwargs):
+        if request.user.is_anonymous:
+            raise PermissionDenied(
+                "You must be logged in to create a new listing."
+            )
+        return super().create(request, *args, **kwargs)
+
+    def perform_create(self, serializer):
+        serializer.save(realtor=self.request.user)
+
+    def destroy(self, request, *args, **kwargs):
+        listing = Listing.objects.get(pk=self.kwargs["pk"])
+        if not request.user == listing.realtor:
+            raise PermissionDenied(
+                "You must be logged in to delete a listing."
+            )
+        return super().destroy(request, *args, **kwargs)
+
+    def update(self, request, *args, **kwargs):
+        listing = Listing.objects.get(pk=self.kwargs["pk"])
+        if not request.user == listing.realtor:
+            raise PermissionDenied(
+                "You must be logged in to edit this listing."
+            )
+        return super().update(request, *args, **kwargs)
+
 
 # Create your views here.
 
 # class BuyerViewSet(viewsets.ModelViewSet):
-#     queryset = BuyerUser.objects.all()
 #     serializer_class = BuyerSerializer
 #
 #

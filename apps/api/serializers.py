@@ -4,7 +4,7 @@ from .models import Listing
 
 
 class ListingSerializer(serializers.ModelSerializer):
-    realtor = serializers.ReadOnlyField(source='realtor.first_name + realtor.last_name')
+    realtor = serializers.ReadOnlyField(source='realtor.first_name' + ' ' + 'realtor.last_name')
 
     class Meta:
         model = Listing
@@ -12,7 +12,7 @@ class ListingSerializer(serializers.ModelSerializer):
 
 """
 class BuyerSerializer(serializers.ModelSerializer):
-   # favorites = serializers.ReadOnlyField(source='favorites.street + favorites.city + favorites.state + favorites.zip') #########
+   # favorites = serializers.ReadOnlyField(source='favorites.street' + 'favorites.city' + 'favorites.state + favorites.zip') #########
 
     class Meta:
         model = BuyerUser

@@ -48,7 +48,7 @@ class Listing(models.Model):
     image2 = models.TextField(default=None)
     image3 = models.TextField(default=None)
     image4 = models.TextField(default=None)
-    interested_buyers = models.ManyToManyField(User, related_name='interested_buyers')
+    interested_buyers = models.ManyToManyField(User, related_name='interested_buyers', blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
