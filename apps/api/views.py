@@ -10,15 +10,24 @@ from rest_framework.exceptions import(
 )
 
 
-# class SingleListingView(generics.RetrieveUpdateDestroyAPIView):
-#     serializer_class = ListingSerializer
-#     permission_classes = (IsAuthenticated, User.user_type == 'realtor')
-#     queryset = Listing.objects.all()
+class RealtorListings(generics.ListCreateAPIView):
+    # must be logged in as a realtor user type
+    permission_classes = (IsAuthenticated, User.user_type == 'realtor')
+    serializer_class = ListingSerializer
 
+    # http://localhost:8000/realtors/URL/1
+    def get_queryset(self):
+        print(self.kwargs)
+        if self.kwargs.get("user_pk"):
 
+            queryset = Listing.objects.filter(
+                realtor=self.request.user
+            )
+            return queryset
 
 class ListingsViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
+    # must be logged in as a realtor user type
+    permission_classes = (IsAuthenticated, User.user_type == 'realtor')
     serializer_class = ListingSerializer
 
     def get_queryset(self):

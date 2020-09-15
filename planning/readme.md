@@ -4,6 +4,8 @@
 
 Link to completed project [here](https://haven-homes.netlify.app/)
 
+Link to heroku [here](https://lt-project4-backend.herokuapp.com/)
+
 Link to project frontend on GitHub [here](https://github.com/infiniteloom/project4-frontend)
 
 Link to project backend on GitHub [here](https://github.com/infiniteloom/project4-backend)
@@ -15,22 +17,23 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | Day 1 | Project description                                              | Completed  |
 | Day 1 | Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Completed  |
 | Day 1 | Authorization                                                    | Completed  |
-| Day 1 | Create serializer for Realtor                                    | Incomplete |
-| Day 1 | Create serializer for Buyer                                      | Incomplete |
-| Day 1 | Create serializer for Listing                                    | Incomplete |
-| Day 1 | Create model for Realtor                                         | Incomplete |
-| Day 1 | Create model for Buyer                                           | Incomplete |
-| Day 1 | Create model for Listing                                         | Incomplete |
-| Day 1 | Create urls for Realtor                                          | Incomplete |
-| Day 1 | Create urls for Buyer                                            | Incomplete |
-| Day 1 | Create urls for Listing                                          | Incomplete |
-| Day 1 | Create comma-separated seed data - import into Python            | Incomplete |
-| Day 1 | Connect Buyer and Realtor to Auth                                | Incomplete |
-| Day 2 | 'Create' view for listings                                       | Incomplete |
-| Day 2 | 'Edit' view for listings                                         | Incomplete |
-| Day 2 | 'Destroy' view for listings                                      | Incomplete |
-| Day 2 | 'Index' and get by id views for listings                         | Incomplete |
-| Day 2 | Testing of all end points                                        | Incomplete |
+| Day 1 | Create serializer for User (Buyer and Realtor Types)             | Completed  |
+| Day 1 | Create serializer for Listing                                    | Completed  |
+| Day 1 | Create model for Listing                                         | Completed  |
+| Day 1 | Create urls for Listing                                          | Completed  |
+| Day 1 | Test Realtor User to Listings                                    | Completed  |
+| Day 1 | Connect Buyer and Realtor to Auth                                | Completed  |
+| Day 1 | 'Create' view for listings                                       | Completed  |
+| Day 1 | 'Edit' view for listings                                         | Completed  |
+| Day 1 | 'Destroy' view for listings                                      | Completed  |
+| Day 1 | 'Index' and get by id views for listings                         | Completed  |
+
+| Day 2 | Create comma-separated seed data - import into Python            | Incomplete |
+| Day 2 | Create urls for User (Buyer and Realtor Types)                   | Incomplete |
+| Day 2 | Create model for User (Buyer and Realtor Types)                  | Incomplete |
+| Day 1 | 'Realtor Listings' view for list view of realtor's listings      | Incomplete |
+
+| Day 2 |  Final testing of all end points                                 | Incomplete |
 
 
 
@@ -165,6 +168,8 @@ The backend functionality of Haven.com is divided into two separate lists: MPV a
 ## Additional Libraries
 
 - Geopy (create coordinates from listing's street addresses and connect with Open Street Map )
+- Django REST Framework 
+- Django REST Framework JWT
 
 ## Code Snippet
 
