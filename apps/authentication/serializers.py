@@ -29,7 +29,7 @@ class LoginSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'token')
+        fields = ('id', 'user_type', 'username', 'email', 'password', 'token')
 
     def validate(self, data):
         username = data.get('username', None)
@@ -64,12 +64,13 @@ class LoginSerializer(serializers.ModelSerializer):
         return{
             "id": user.id,
             "username": user.username,
-            "email":user.email,
-            "token": user.token
+            "email": user.email,
+            "token": user.token,
+            "user_type": user.user_type
         }
 
 
 class UserListSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email')
+        fields = ('id', 'username', 'email', 'user_type')

@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework import viewsets
-from rest_framework.views import APIView
 from apps.api.models import Listing
 from apps.authentication.models import User
 from apps.api.serializers import ListingSerializer
@@ -51,21 +50,13 @@ class BuyerFavoritesView(generics.ListCreateAPIView):
            return queryset
 
 
-    # def get_queryset(self):
-    #
-    #     if self.kwargs.get('pk'):
-    #         queryset = Listing.objects.get(pk=self.kwargs["pk"])
-    #         print(f'this is all the returned favorites: {queryset}')
-    #         return queryset
-    #
-
-
 
 
 class ListingsViewSet(viewsets.ModelViewSet):
     # must be logged in as a realtor user type
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (AllowAny,)
     serializer_class = ListingSerializer
+
 
     def get_queryset(self):
         print(" ****************** getquery set is being called ****************** ")
@@ -73,7 +64,7 @@ class ListingsViewSet(viewsets.ModelViewSet):
         return queryset
 
     def create(self, request, *args, **kwargs):
-        if request.user.is_anonymous:
+        if not IsAuthenticated:
             raise PermissionDenied(
                 "You must be logged in to create a new listing."
             )

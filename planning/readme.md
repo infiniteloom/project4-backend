@@ -33,7 +33,7 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | Day 2 | 'Realtor Listings' view for list view of realtor's listings      | Completed  |
 | Day 2 | 'Favorites Listings' view for list view of buyer's favorite homes| Completed  |
 | Day 2 | Create comma-separated seed data - import into Python            | Incomplete |
-| Day 2 | Adjust permissions for listings (index=public, create/update/destroy=realtor only)| Incomplete  |
+| Day 2 | Adjust permissions for listings (index=public, create/update/destroy=realtor only)| Complete  |
 | Day 2 |  Final testing of all end points                                 | Incomplete |
 
 
