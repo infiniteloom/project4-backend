@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
         if username is None:
             raise TypeError("Users must have a username.")
         if email is None:
-            raise TypeError("Users must have an email address. ")
+            raise TypeError("Users must have an email address.")
 
 
         # create the user object
@@ -74,7 +74,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     city = models.CharField(max_length=100, null=True)
     zip = models.IntegerField(null=True)
     company = models.CharField(max_length=100, null=True)
-    user_type = models.CharField(db_index=True, max_length=255)
+    user_type = models.CharField(max_length=255, default='buyer')
     # is_buyer = models.BooleanField(default=False)
     # is_realtor = models.BooleanField(default=False)
 

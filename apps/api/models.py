@@ -41,11 +41,14 @@ class Listing(models.Model):
     bed = models.IntegerField()
     bath = models.IntegerField()
     home_size = models.IntegerField() #square feet
-    lot_size = models.IntegerField()  # acres
+    lot_size = models.FloatField()  # acres
     price = models.IntegerField()
     description = models.TextField()
-    images = models.TextField()
-    interested_buyers = models.ManyToManyField(User)
+    image1 = models.TextField(default=None)
+    image2 = models.TextField(default=None)
+    image3 = models.TextField(default=None)
+    image4 = models.TextField(default=None)
+    interested_buyers = models.ManyToManyField(User, related_name='interested_buyers')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)

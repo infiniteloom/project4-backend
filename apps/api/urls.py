@@ -6,10 +6,11 @@ from apps.api.views import SingleListingView
 router = routers.DefaultRouter()
 router.register(r'listing', SingleListingView, basename='listing') # url is /listing
 
+
+urlpatterns=[
+    url(r'listings', SingleListingView.as_view, name='listings')
+]
+
 # urlpatterns = [
 #     path('', include(router.urls))
 # ]
-
-urlpatterns=[
-    url(r'listing', SingleListingView.as_view, name='listings')
-]
