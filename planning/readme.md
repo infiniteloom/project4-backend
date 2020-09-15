@@ -27,12 +27,13 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | Day 1 | 'Edit' view for listings                                         | Completed  |
 | Day 1 | 'Destroy' view for listings                                      | Completed  |
 | Day 1 | 'Index' and get by id views for listings                         | Completed  |
-
+|       |                                                                  |            |
+| Day 2 | Create urls for User (Buyer and Realtor Types)                   | Completed  |
+| Day 2 | Create model for User (Buyer and Realtor Types)                  | Completed  |
+| Day 2 | 'Realtor Listings' view for list view of realtor's listings      | Completed  |
+| Day 2 | 'Favorites Listings' view for list view of buyer's favorite homes| Completed  |
 | Day 2 | Create comma-separated seed data - import into Python            | Incomplete |
-| Day 2 | Create urls for User (Buyer and Realtor Types)                   | Incomplete |
-| Day 2 | Create model for User (Buyer and Realtor Types)                  | Incomplete |
-| Day 1 | 'Realtor Listings' view for list view of realtor's listings      | Incomplete |
-
+| Day 2 | Adjust permissions for listings (index=public, create/update/destroy=realtor only)| Incomplete  |
 | Day 2 |  Final testing of all end points                                 | Incomplete |
 
 

@@ -51,7 +51,7 @@ class Listing(models.Model):
     image4 = models.TextField(default=None)
     # Relationships:
     interested_buyers = models.ManyToManyField(User, related_name='interested_buyers', blank=True)
-    realtor = models.ForeignKey(User, on_delete=models.CASCADE)
+    realtor = models.ForeignKey(User, on_delete=models.CASCADE) # realtor can have many listings 1:N
     # Time stamps:
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
@@ -59,5 +59,5 @@ class Listing(models.Model):
 
 
     def __str__(self):
-        return self.street + ", " + self.city + ", " + self.state + ", " + self.zip
+        return self.street + ", " + self.city + ", " + self.state + ", " + str(self.zip)
 
