@@ -10,20 +10,20 @@ from rest_framework.exceptions import(
 )
 
 
-class RealtorListings(generics.ListCreateAPIView):
+class RealtorListings(generics.RetrieveUpdateDestroyAPIView):
+
+    print('$$$$$$$$$$$$$ reaching the realtor listings view ')
     # must be logged in as a realtor user type
     permission_classes = (IsAuthenticated, User.user_type == 'realtor')
     serializer_class = ListingSerializer
 
-    # http://localhost:8000/realtors/URL/1
+    # http://localhost:8000/realtor/1/listings
     def get_queryset(self):
         print(self.kwargs)
-        if self.kwargs.get("user_pk"):
-
-            queryset = Listing.objects.filter(
-                realtor=self.request.user
-            )
-            return queryset
+        queryset = Listing.objects.all().filter(
+            realtor=self.request.user
+        )
+        return queryset
 
 class ListingsViewSet(viewsets.ModelViewSet):
     # must be logged in as a realtor user type
