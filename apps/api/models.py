@@ -35,6 +35,7 @@ class Listing(models.Model):
     # Properties:
     type = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
+    county = models.CharField(max_length=100, null=True)
     state = models.CharField(max_length=2)
     zip = models.IntegerField()
     street = models.CharField(max_length=100)
@@ -45,6 +46,7 @@ class Listing(models.Model):
     lot_size = models.FloatField()  # acres
     price = models.IntegerField()
     description = models.TextField()
+    # should i change these images into a one listing has many images and create a model for images?
     image1 = models.TextField(default=None)
     image2 = models.TextField(default=None)
     image3 = models.TextField(default=None)
