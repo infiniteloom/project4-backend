@@ -28,13 +28,10 @@ with open('listings-urls.csv', 'r') as csv_file:
 
         info_page = urllib.request.urlopen(row[0]).read()
 """
-info_page = urllib.request.urlopen('https://www.compass.com/listing/174-pacific-street-unit-4a-brooklyn-ny-11201/529504371236159209/').read()
+info_page = urllib.request.urlopen('https://www.compass.com/listing/12-18-ballard-road-mongaup-valley-ny-12762/594433160153028873/').read()
 
 info_soup = bs.BeautifulSoup(info_page, features="html.parser")
 body = info_soup.body
-table = info_soup.find('table', class_="data-table__TableStyled-ibnf7p-0 bhHpMT")
-table_rows = table.find_all('tr')
-
 
 # This is the dictionary that holds all of the gathered information and will be appended to the csv.
 house = {
@@ -50,53 +47,52 @@ house = {
     "lot_size": 0,
     "price": 0,
     "description": '',
-    "image1": '',
-    "image2": '',
-    "image3": '',
-    "image4": ''
+    "image1": ''
 }
 
 # Get description
-#house['description'] = body.find('div', class_="sc-fzoWqW eoVQRn").text
+house['description'] = body.find('div', class_="sc-fzoWqW eoVQRn").text
 
 
-info = body.select('div[class*="summary__SummaryCaption"]')
-
-# address_tags = body.find_all('a', class_="textIntent-caption1")
-# house['street'] = address_tags[4:5]
-
-# Get price
-price_poss = body.find_all('div', class_="textIntent-title2")
-price = []
-for pr in price_poss:
-    if '$' in pr.text:
-        price.append(int(pr.text[1:].replace(",", "")))
-house['price'] = price[0]
+# Get address (street, city, state, zip)
 
 
-# Get address
 address = body.select('div[class*="summary__StyledAddressCaption"]')
 address_text = address[0].text
 addr_split = address_text.split(",")
-house['street'] = addr_split[0]
-house['city'] = addr_split[1].strip(' ')
-house['state'] = (addr_split[2].lstrip(' ').split(' '))[0]
-house['zip'] = (addr_split[2].lstrip(' ').split(' '))[1]
+house['city'] = addr_split[0].strip(' ')
+house['state'] = (addr_split[1].lstrip(' ').split(' '))[0]
+house['zip'] = (addr_split[1].lstrip(' ').split(' '))[1]
 
 
+# Get price, bed, bath
+info = body.select('div[class*="summary__Content"]')
 
-# Get home_size, bed, bath
 for inf in info:
-    if 'Living Area: ' in inf.text:
-        area = inf.text[(len('Living Area: ')):]
-        house['home_size'] = float(inf.span.text)
-    if 'Bedrooms Total:' in inf.text:
-        house['bed'] = int(inf.span.text)
-    if 'Bathrooms Full:' in inf.text:
-        house['bath'] = int(inf.span.text)
+    # print(inf.text)
+    if 'Price' in inf.text:
+        house['price'] = float(inf.text.replace(',', '').strip('$').replace('Price', ''))
+    if 'Beds' in inf.text:
+        house['bed'] = int(inf.text.replace('Beds', ''))
+    if 'Baths' in inf.text:
+        house['bath'] = int(inf.text.replace('Baths', ''))
+    if house['city'] in inf.text:
+        ind = inf.text.index(house['city'])
+        house['street'] = inf.text[:ind]
+    if 'Sq.' in inf.text and '$' not in inf.text:
+        ind = inf.text.index('Sq.')
+        house['home_size']= inf.text[:ind]
+
+
+
 
 
 # Get year_built, lot_size, type, county
+
+table = info_soup.find('table', class_="data-table__TableStyled-ibnf7p-0 bhHpMT")
+table_rows = table.find_all('tr')
+
+
 for tr in table_rows:
     td = tr.find_all('td')
     for i in range(len(td)-1):
@@ -115,12 +111,14 @@ for tr in table_rows:
 print(house)
 
 
-
+# Get one image:
+print(body.find('img').get('src'))
+# house['image1'] = body.find('img')
 
 ################ Add this house to the csv file "house-listings.csv" ################
 
 file = csv.writer(open('house-listings.csv', 'w'))
-file.writerow(["type", "city", "state", "zip", "street", "year_built", "bed", "bath", "home_size", "lot_size", "price", "description", "image1", "image2", "image3", "image4"])
+file.writerow(["type", "city", "state", "zip", "street", "year_built", "bed", "bath", "home_size", "lot_size", "price", "description", "image1"])
 
 # Add this house as a row to the csv.
-file.writerow([house['type'], house['city'], house['state'], house['zip'], house['street'], house['year_built'], house['bed'], house['bath'], house['home_size'], house['lot_size'], house['price'], house['description'], house['image1'], house['image2'], house['image3'], house['image4']])
+file.writerow([house['type'], house['city'], house['state'], house['zip'], house['street'], house['year_built'], house['bed'], house['bath'], house['home_size'], house['lot_size'], house['price'], house['description'], house['image1']])

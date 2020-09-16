@@ -1,2 +1,2 @@
-type,city,state,zip,street,year_built,bed,bath,home_size,lot_size,price,description,image1,image2,image3,image4
-Co-op,Brooklyn,NY,11201,174 Pacific St Cobble Hill,1901,0,0,0,0,2500000,,,,,
+type,city,state,zip,street,year_built,bed,bath,home_size,lot_size,price,description,image1
+Single Family,Mongaup Valley,NY,12762,12-18 Ballard Road,2002,4,3,"1,512 ",18.86,765000.0,"Property is located in the heart of the Sullivan County Catskills. Sit on your deck and enjoy the views of the well manicured 18+ acres with several ponds and bonus 3 bedroom home to be finished renovating for extra income or extended family. Two homes, land, ponds and more. Property includes 12 & 18 Ballard Rd. Ranch style home with an accessory 1 bedroom apartment downstairs. First floor has an open floor plan, laminate flooring,large living room w/a gas fireplace and sliders which lead to an oversize...",

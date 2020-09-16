@@ -15,17 +15,10 @@ file.writerow(['url'])
 # Gather primary information from body of multiple regional listings page.
 
 regional_listings_pages = [
-    'https://www.compass.com/homes-for-sale/_map/mapview=41.69125189087717,-73.67678056005388,41.23070881554308,-73.99675736669451/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=41.31987607858595,-73.86880184751635,40.390254627043724,-74.5087554607976/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=42.75937320781332,-74.61276769085157,41.84936884760099,-75.25409459514843/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=40.94646206869337,-73.78396725910888,40.713963575871645,-73.94395566242919/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=40.739876697212324,-73.90153245345559,40.62336718364866,-73.98152665511574/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=41.95950103394698,-74.30267513287292,41.50087486692388,-74.62265193951355/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=42.13384557493043,-73.04956830745847,41.21582231944765,-73.68952192073972/price.min=425k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=41.410202223388396,-72.31369478478442,41.179340280337904,-72.47368318810473/price.min=900k/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=40.866261044035014,-73.86248188690134,40.63348106991663,-74.02247029022165/price.min=2m/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=41.60845759224359,-73.88417588277268,41.147324927495916,-74.2041526894133/price.min=2m/',
-    'https://www.compass.com/homes-for-sale/_map/mapview=42.02310014075104,-74.4249357604212,41.56492994464449,-74.74491256706183/price.min=2m/'
+    'https://www.compass.com/homes-for-sale/_map/price.min=500k/property-type=Single%20Family,Multi%20Family,Land/status=active/mapview=42.11672554820275,-74.31565783148434,41.642296386124734,-74.8457481635156/',
+    'https://www.compass.com/homes-for-sale/_map/price.min=500k/property-type=Single%20Family,Multi%20Family,Land/status=active/mapview=42.469542492018576,-74.14511221357468,41.99877214605945,-74.42595022626999/',
+    'https://www.compass.com/homes-for-sale/_map/price.min=500k/property-type=Single%20Family,Multi%20Family,Land/status=active/mapview=43.141584051611744,-72.93039352691973,41.25768335673707,-74.05374557770098/',
+    'https://www.compass.com/homes-for-sale/_map/price.min=500k/property-type=Single%20Family,Multi%20Family,Land/status=active/mapview=43.92411485141011,-74.32565719879473,42.064082490801866,-75.44900924957598/'
 ]
 for page in regional_listings_pages:
     info_page = urllib.request.urlopen(page).read()
