@@ -5,6 +5,12 @@ from apps.authentication.models import User
 
 
 
+
+
+"""
+THIS SECTION CREATES NEW INSTANCES OF USERS AS REALTORS 
+EACH LISTING WILL BE ASSIGNED TO A REALTOR BASED ON COUNTY
+"""
 # Create realtors for seed data:
 realtor1 = User(
     id=1,
@@ -161,7 +167,30 @@ realtor11 = User(
     user_type='realtor'
 )
 
+# save all new realtor instances of User model
+realtor1.save()
+realtor2.save()
+realtor3.save()
+realtor4.save()
+realtor5.save()
+realtor6.save()
+realtor7.save()
+realtor8.save()
+realtor9.save()
+realtor10.save()
+realtor11.save()
 
+
+
+
+
+
+
+
+
+"""
+THIS SECTION IMPORTS THE HOUSE LISTINGS SCRAPED FROM COMPASS.COM AND SAVED INTO A "house-listings.csv" USING BEAUTIFULSOUP
+"""
 
 with open('house-listings.csv', 'r') as csv_file:
     csvreader = csv.reader(csv_file)
@@ -169,11 +198,10 @@ with open('house-listings.csv', 'r') as csv_file:
     # Skips header line in csv_file.
     next(csvreader)
 
-
-
     # Loops through each row in the csv
     for row in csvreader:
 
+        # Creates references to realtor based on what county the listing is in.
         if row[12] == 'Ulster County':
             realtor = realtor1
 
@@ -207,6 +235,7 @@ with open('house-listings.csv', 'r') as csv_file:
         if row[12] == 'Litchfield County':
             realtor = realtor11
 
+        # In case any extra counties are unaccounted for (base case)
         else:
             realtor = realtor11
 
@@ -232,3 +261,40 @@ with open('house-listings.csv', 'r') as csv_file:
         )
 
         new_listing.save()
+
+
+
+
+"""
+THIS SECTION CREATES NEW USERS AS BUYERS TO SAVE AND FAVORITE HOME LISTINGS
+"""
+
+
+buyer1 = User(
+    id=12,
+    email="angel@angel.com",
+    username='angelangel',
+    password='buybuy123123',
+    user_type='buyer'
+)
+
+buyer2 = User(
+    id=12,
+    email="taylor@taylor.com",
+    username='taylortaylor',
+    password='buybuy123123',
+    user_type='buyer'
+)
+
+buyer3 = User(
+    id=12,
+    email="misty@misty.com",
+    username='mistymisty',
+    password='buybuy123123',
+    user_type='buyer'
+)
+
+# Save new instances of User model as buyers
+buyer1.save()
+buyer2.save()
+buyer3.save()
