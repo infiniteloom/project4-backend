@@ -12,7 +12,7 @@ THIS SECTION CREATES NEW INSTANCES OF USERS AS REALTORS
 EACH LISTING WILL BE ASSIGNED TO A REALTOR BASED ON COUNTY
 """
 # Create realtors for seed data:
-"""
+
 {
     "model": "authentication.user",
     "pk":1,
@@ -30,7 +30,7 @@ EACH LISTING WILL BE ASSIGNED TO A REALTOR BASED ON COUNTY
         "user_type":'realtor'
     }
 }
-"""
+
 realtor2 = User(
     id=2,
     email="john@john.com",
@@ -184,8 +184,6 @@ realtor8.save()
 realtor9.save()
 realtor10.save()
 realtor11.save()
-
-
 
 
 

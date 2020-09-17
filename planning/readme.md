@@ -32,9 +32,13 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 | Day 2 | Create model for User (Buyer and Realtor Types)                  | Completed  |
 | Day 2 | 'Realtor Listings' view for list view of realtor's listings      | Completed  |
 | Day 2 | 'Favorites Listings' view for list view of buyer's favorite homes| Completed  |
-| Day 2 | Create comma-separated seed data - import into Python            | Incomplete |
-| Day 2 | Adjust permissions for listings (index=public, create/update/destroy=realtor only)| Complete  |
-| Day 2 |  Final testing of all end points                                 | Incomplete |
+| Day 2 | Adjust permissions for listings (index=public, create/update/destroy=realtor only)| Completed  |
+|       |                                                                  |            |
+| Day 2/3 | Use Beautiful Soup to scrape data, create csv for seed data set| Completed  |
+| Day 3 | Create seed data template                                        | Completed  |
+| Day 3 | Import seed data into database                                   | Incomplete |
+|       |                                                                  |            |
+| Day 3 |  Final testing of all end points                                 | Incomplete |
 
 
 
@@ -51,39 +55,50 @@ The front-end is built with HTML, CSS and JavaScript using Vue.js and Bootstrap.
 The backend is built with Python and PostgreSQL using Django. 
 
 
-#### Realtor Model
-Realtor Model Properties:
-- region = dropdown menu 
-- city = models.CharField(max_length=100)
-- zip = models.IntField(max_length=10)
-- name = models.CharField(max_length=100)
-- company = models.CharField(max_length=100)
-- listings = listings belong to Realtor, referenced relationship
-
-#### Buyer Model
-Buyer Model Properties:
-- name = models.CharField(max_length=100)
-- email = models.CharField(max_length=100)
-- favorites = favorite a listing, listing belongs to Buyer?
-
+#### User Model
+    class User(AbstractBaseUser, PermissionsMixin):
+        email = models.EmailField(db_index=True, unique=True)
+        username = models.CharField(db_index=True, max_length=255, unique=True)
+        first_name = models.CharField(max_length=255, null=True, blank=True)
+        last_name = models.CharField(max_length=255, null=True, blank=True)
+        is_active = models.BooleanField(default=True)
+        is_staff = models.BooleanField(default=False)
+        created_at = models.DateTimeField(auto_now_add=True)
+        updated_at = models.DateTimeField(auto_now=True)
+        county = models.CharField(max_length=100, null=True)
+        city = models.CharField(max_length=100, null=True)
+        zip = models.IntegerField(null=True)
+        company = models.CharField(max_length=100, null=True)
+        user_type = models.CharField(max_length=255, default='buyer')
 
 #### Listing Model
-Listing Model Properties:
-- type = dropdown menu (house, land, condo, apartment)
-- city = models.CharField(max_length=100)
-- state = drop down menu, 2 letters
-- zip = models.IntegerField(max_length=10)
-- street = models.CharField(max_length=100)
-- year_built = models.IntegerField(max_length=4)
-- bed = drop down menu could be cool
-- bath = drop down menu
-- home_size = models.IntegerField(max_length=7) (sq feet)
-- lot_size = models.IntegerField(max_length=7)   (sq feet)
-- price =  models.IntegerField(max_length=10)   
-- description = models.TextField()
-- images = file drop!!!!!!!!!!!!!!!
-- **created_at (if less than 14 days old, add a ‘new’ sticker)
-- created_by = listings belong to Realtor
+    class Listing(models.Model):
+        # Properties:
+        type = models.CharField(max_length=100)
+        city = models.CharField(max_length=100)
+        county = models.CharField(max_length=100, null=True)
+        state = models.CharField(max_length=2)
+        zip = models.IntegerField()
+        street = models.CharField(max_length=100)
+        year_built = models.IntegerField()
+        bed = models.IntegerField()
+        bath = models.IntegerField()
+        home_size = models.IntegerField() #square feet
+        lot_size = models.FloatField()  # acres
+        price = models.IntegerField()
+        description = models.TextField()
+        # should i change these images into a one listing has many images and create a model for images?
+        image1 = models.TextField(default=None)
+        image2 = models.TextField(default=None)
+        image3 = models.TextField(default=None)
+        image4 = models.TextField(default=None)
+        # Relationships:
+        interested_buyers = models.ManyToManyField(User, related_name='interested_buyers', blank=True)
+        realtor = models.ForeignKey(User, on_delete=models.CASCADE) # realtor can have many listings 1:N
+        # Time stamps:
+        created_at = models.DateTimeField(auto_now_add=True)
+        updated_at = models.DateTimeField(auto_now_add=True)
+
 
 
 

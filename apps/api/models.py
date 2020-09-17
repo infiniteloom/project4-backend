@@ -17,7 +17,7 @@ class Listing(models.Model):
     bath = models.IntegerField()
     home_size = models.IntegerField() #square feet
     lot_size = models.FloatField()  # acres
-    price = models.IntegerField()
+    price = models.FloatField()
     description = models.TextField()
     # should i change these images into a one listing has many images and create a model for images?
     image1 = models.TextField(default=None)
