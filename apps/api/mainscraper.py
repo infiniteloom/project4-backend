@@ -2,16 +2,12 @@ import bs4 as bs
 import urllib.request
 import csv
 
-# import re
-# from selenium import webdriver
-
 
 """
 This file opens each individual house's URL on the imported list of URLs from urlscraper.py (a file that 
 scrapes href tags from the thumbnails as well as img srcs of the thumbnails of homes on Compass's regional listings page)
 Each row in the final resulting 'house-listings.csv' file is representative of all descriptive information scraped from 
 each individual home. 
-
 """
 
 with open('listings-urls.csv', 'r') as csv_file:

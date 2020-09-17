@@ -1,6 +1,6 @@
 import csv
 import django
-from api.models import Listing
+
 from apps.authentication.models import User
 
 
@@ -12,20 +12,25 @@ THIS SECTION CREATES NEW INSTANCES OF USERS AS REALTORS
 EACH LISTING WILL BE ASSIGNED TO A REALTOR BASED ON COUNTY
 """
 # Create realtors for seed data:
-realtor1 = User(
-    id=1,
-    email="mika@mika.com",
-    username='mikamika',
-    password='buybuy123123',
-    first_name='Mika',
-    last_name='Akim',
-    county='Ulster County',
-    city="Kingston",
-    zip="12401",
-    company="Ulster County Realtors, Co.",
-    user_type='realtor'
-)
-
+"""
+{
+    "model": "authentication.user",
+    "pk":1,
+    "fields": {
+        "id":"1,
+        "email":"mika@mika.com",
+        "username":'mikamika',
+        "password":"buybuy123123",
+        "first_name":'Mika',
+        "last_name":'Akim',
+        "county":'Ulster County',
+        "city":"Kingston",
+        "zip":"12401",
+        "company":"Ulster County Realtors, Co.",
+        "user_type":'realtor'
+    }
+}
+"""
 realtor2 = User(
     id=2,
     email="john@john.com",
@@ -279,7 +284,7 @@ buyer1 = User(
 )
 
 buyer2 = User(
-    id=12,
+    id=13,
     email="taylor@taylor.com",
     username='taylortaylor',
     password='buybuy123123',
@@ -287,7 +292,7 @@ buyer2 = User(
 )
 
 buyer3 = User(
-    id=12,
+    id=14,
     email="misty@misty.com",
     username='mistymisty',
     password='buybuy123123',
