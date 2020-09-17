@@ -1,5 +1,7 @@
+
+import django
 from rest_framework import serializers
-from .models import Listing
+from apps.api.models import Listing
 
 
 

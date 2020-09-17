@@ -51,6 +51,7 @@ class LoginAPIView(APIView):
 
     def post(self, request):
         user = request.data.get('user', {})
+        print(user)
 
         # this is base case if user is not created:
         if not user:
@@ -59,6 +60,9 @@ class LoginAPIView(APIView):
                 "password": request.data.get('password'),
             }
         serializer = self.serializer_class(data=user)
+        print(serializer)
+
+
         # raise an error if it doesn't go right
         serializer.is_valid(raise_exception=True)
 
