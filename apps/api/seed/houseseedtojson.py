@@ -84,7 +84,7 @@ with open('house-listings.csv', 'r') as csv_file:
         counter += 1
         listings.append(listing)
 
-    with open('file.json', 'w') as jsonfile:
+    with open('seed.json', 'w') as jsonfile:
         json.dump(listings, jsonfile)
         jsonfile.write('\n')
 

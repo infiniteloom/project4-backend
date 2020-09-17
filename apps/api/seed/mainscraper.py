@@ -12,24 +12,20 @@ each individual home.
 
 with open('listings-urls.csv', 'r') as csv_file:
     csvreader = csv.reader(csv_file)
+
     # Skips header line in csv_file.
     next(csvreader)
 
     file = csv.writer(open('house-listings.csv', 'w'))
     file.writerow(
         ["type", "city", "state", "zip", "street", "year_built", "bed", "bath", "home_size", "lot_size", "price",
-         "description", "image1"])
-
-
+         "description", "image1", "county"])
 
 
     # Loop through this entire scraping function per row (contains single listing URL) in csv_file
     for row in csvreader:
         print(row[0])
         info_page = urllib.request.urlopen(row[0]).read()
-
-        #for testing single page:
-        # info_page = urllib.request.urlopen('https://www.compass.com/listing/12-18-ballard-road-mongaup-valley-ny-12762/594433160153028873/').read()
 
         info_soup = bs.BeautifulSoup(info_page, features="html.parser")
         body = info_soup.body
@@ -48,7 +44,8 @@ with open('listings-urls.csv', 'r') as csv_file:
             "lot_size": 0,
             "price": 0,
             "description": '',
-            "image1": ''
+            "image1": '',
+            "county":''
         }
 
         # Used to check if any numbers are in a string, conditional
@@ -58,8 +55,6 @@ with open('listings-urls.csv', 'r') as csv_file:
         # Get description
         if body.find('div', class_="sc-fzoWqW eoVQRn"):
             house['description'] = body.find('div', class_="sc-fzoWqW eoVQRn").text
-
-
 
 
         # Get address (street, city, state, zip)
@@ -74,8 +69,6 @@ with open('listings-urls.csv', 'r') as csv_file:
         # Get price, bed, bath
         info = body.select('div[class*="summary__Content"]')
 
-
-
         for inf in info:
             # print(inf.text)
             if 'Price' in inf.text:
@@ -83,7 +76,6 @@ with open('listings-urls.csv', 'r') as csv_file:
             if 'Beds' in inf.text:
                 for num in nums:
                     if num in inf.text:
-                        print(inf.text)
                         house['bed'] = int(inf.text.replace('Beds', ''))
             if 'Baths' in inf.text:
                 for num in nums:
@@ -100,12 +92,7 @@ with open('listings-urls.csv', 'r') as csv_file:
                     house['home_size']= int(size)
 
 
-
-
-
-
         # Get year_built, lot_size, type, county
-
         table = info_soup.find('table', class_="data-table__TableStyled-ibnf7p-0 bhHpMT")
         table_rows = table.find_all('tr')
 
@@ -129,7 +116,6 @@ with open('listings-urls.csv', 'r') as csv_file:
                     house['county'] = td[i+1].text
 
 
-
         # Get one image per listing:
         # print(body.find('img').get('src'))
         house['image1'] = 'https://' + (body.find('img').get('src'))
@@ -139,6 +125,5 @@ with open('listings-urls.csv', 'r') as csv_file:
         ################ Add this house to the csv file "house-listings.csv" ################
 
         print(house)
-
         # Add this house as a row to the csv.
         file.writerow([house['type'], house['city'], house['state'], house['zip'], house['street'], house['year_built'], house['bed'], house['bath'], house['home_size'], house['lot_size'], house['price'], house['description'], house['image1'], house["county"]])

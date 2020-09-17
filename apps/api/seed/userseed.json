@@ -1,0 +1,237 @@
+[
+    {
+        "model": "authentication.user",
+        "pk": 1,
+        "fields": {
+            "email": "mika@mika.com",
+            "username": "mikamika",
+            "password": "buybuy123123",
+            "first_name": "Mika",
+            "last_name": "Akim",
+            "county": "Ulster County",
+            "city": "Kingston",
+            "zip": "12401",
+            "company": "Ulster County Realtors, Co.",
+            "user_type": "realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 2,
+        "fields": {
+            "email":"john@john.com",
+            "username":"johnjohn",
+            "password":"buybuy123123",
+            "first_name":"John",
+            "last_name":"Mistermister",
+            "county":"Greene County",
+            "city":"Catskill",
+            "zip":"12414",
+            "company":"Catskill Homes, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 3,
+        "fields": {
+            "email":"hannah@hannah.com",
+            "username":"hannahhannah",
+            "password":"buybuy123123",
+            "first_name":"Hannah",
+            "last_name":"Lewis",
+            "county":"Delaware County",
+            "city":"Delhi",
+            "zip":"13753",
+            "company":"Delhi's Finest",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 4,
+        "fields": {
+            "email":"nico@nico.com",
+            "username":"niconico",
+            "password":"buybuy123123",
+            "first_name":"Nico",
+            "last_name":"Matsuda",
+            "county":"Dutchess County",
+            "city":"Poughkeepsie",
+            "zip":"12601",
+            "company":"Dutchess County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 5,
+        "fields": {
+            "email":"liza@liza.com",
+            "username":"lizaliza",
+            "password":"buybuy123123",
+            "first_name":"liza",
+            "last_name":"johnson",
+            "county":"Fairfield County",
+            "city":"Fairfield",
+            "zip":"06824",
+            "company":"Fairfield County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 6,
+        "fields": {
+            "email":"summer@summer.com",
+            "username":"summersummer",
+            "password":"buybuy123123",
+            "first_name":"Summer",
+            "last_name":"Akana",
+            "county":"Herkimer County",
+            "city":"Herkimer",
+            "zip":"13350",
+            "company":"Herkimer County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 7,
+        "fields": {
+            "email":"brendan@brendan.com",
+            "username":"brendanbrendan",
+            "password":"buybuy123123",
+            "first_name":"Brendan",
+            "last_name":"Muhly",
+            "county":"Sullivan County",
+            "city":"Monticello",
+            "zip":"12701",
+            "company":"Sullivan County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 8,
+        "fields": {
+            "email":"jeremy@jeremy.com",
+            "username":"jeremyjeremy",
+            "password":"buybuy123123",
+            "first_name":"Jeremy",
+            "last_name":"Mendo",
+            "county":"Oneida County",
+            "city":"Oneida",
+            "zip":"13032",
+            "company":"Oneida County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 9,
+        "fields": {
+            "email":"gina@gina.com",
+            "username":"ginagina",
+            "password":"buybuy123123",
+            "first_name":"Gina",
+            "last_name":"Kristin",
+            "county":"Westchester County",
+            "city":"Westchester",
+            "zip":"10504",
+            "company":"Westchester County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-16T10:17:12+0000",
+            "updated_at": "2020-09-16T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 10,
+        "fields": {
+            "email":"sara@sara.com",
+            "username":"sarasara",
+            "password":"buybuy123123",
+            "first_name":"Sara",
+            "last_name":"Gold",
+            "county":"Putnam County",
+            "city":"Patterson",
+            "zip":"12563",
+            "company":"Putnam County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-17T10:17:12+0000",
+            "updated_at": "2020-09-17T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 11,
+        "fields": {
+            "email":"michael@michael.com",
+            "username":"michaelmichael",
+            "password":"buybuy123123",
+            "first_name":"Michael",
+            "last_name":"Thayer",
+            "county":"Litchfield County",
+            "city":"Litchfield",
+            "zip":"06750",
+            "company":"Litchfield County Realtors, Co.",
+            "user_type":"realtor",
+            "created_at": "2020-09-17T10:17:12+0000",
+            "updated_at": "2020-09-17T10:17:12+0000"
+        }
+    },
+    {
+        "model": "authentication.user",
+        "pk": 12,
+        "fields": {
+            "email": "angel@angel.com",
+            "username": "angelangel",
+            "password": "buybuy123123",
+            "user_type": "buyer",
+            "created_at": "2020-09-17T10:17:12+0000",
+            "updated_at": "2020-09-17T10:17:12+0000"
+        }
+    },
+    {
+     "model": "authentication.user",
+        "pk": 13,
+        "fields":{
+            "email":"taylor@taylor.com",
+            "username":"taylortaylor",
+            "password":"buybuy123123",
+            "user_type":"buyer",
+            "created_at": "2020-09-17T10:17:12+0000",
+            "updated_at": "2020-09-17T10:17:12+0000"
+        }
+    },
+    {
+     "model": "authentication.user",
+        "pk": 14,
+        "fields":{
+            "email":"misty@misty.com",
+            "username":"mistymisty",
+            "password":"buybuy123123",
+            "user_type":"buyer",
+            "created_at": "2020-09-17T10:17:12+0000",
+            "updated_at": "2020-09-17T10:17:12+0000"
+        }
+    }
+]
+
