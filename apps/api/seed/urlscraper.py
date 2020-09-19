@@ -5,7 +5,7 @@ import csv
 
 """
 This function scrapes the thumbnails page of regional listings and gathers the urls of each individual listing
-which will then be passed along to the main scraper.py to retrieve individual house listings and add them to a seed data file "house-listings.csv"
+which will then be passed along to the main scraper.py to retrieve individual house listings and add them to a seed data file "listings.csv"
 """
 
 # Create a csv file to write to, add the header

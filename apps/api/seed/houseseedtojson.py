@@ -1,14 +1,10 @@
 
 
-
-
-
-
 import csv
 import json
 
 
-with open('house-listings.csv', 'r') as csv_file:
+with open('listings.csv', 'r') as csv_file:
 
     csvreader = csv.reader(csv_file)
 
@@ -76,7 +72,7 @@ with open('house-listings.csv', 'r') as csv_file:
                 "price":row[10],
                 "description":row[11],
                 "image1":row[12],
-                "realtor":1,
+                "realtor":2,
                 "created_at":'2020-09-16T19:24:17+0000',
                 "updated_at":"2020-09-16T19:24:17+0000"
             }
