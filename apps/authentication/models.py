@@ -78,7 +78,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     city = models.CharField(max_length=100, null=True)
     zip = models.CharField(max_length=10, null=True)
     company = models.CharField(max_length=100, null=True)
-    user_type = models.CharField(max_length=255, default='buyer')
+    user_type = models.CharField(max_length=255, default='realtor')
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email'] # this is an array, could have more required fields

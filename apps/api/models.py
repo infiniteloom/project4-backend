@@ -19,11 +19,7 @@ class Listing(models.Model):
     lot_size = models.FloatField()  # acres
     price = models.FloatField()
     description = models.TextField()
-    # should i change these images into a one listing has many images and create a model for images?
     image1 = models.TextField(default=None)
-    # image2 = models.TextField(default=None)
-    # image3 = models.TextField(default=None)
-    # image4 = models.TextField(default=None)
     # Relationships:
     interested_buyers = models.ManyToManyField(User, related_name='interested_buyers', blank=True)
     realtor = models.ForeignKey(User, on_delete=models.CASCADE) # realtor can have many listings 1:N

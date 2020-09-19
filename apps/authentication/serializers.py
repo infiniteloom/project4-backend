@@ -8,13 +8,22 @@ class RegistrationSerializer(serializers.ModelSerializer):
         min_length=8,
         write_only=True
     )
+    # email = serializers.CharField(max_length=255, read_only=True)
+    # username = serializers.CharField(max_length=255)
+    # first_name = serializers.CharField(max_length=255)
+    # last_name = serializers.CharField(max_length=255)
+    # county = serializers.CharField(max_length=100)
+    # city = serializers.CharField(max_length=100)
+    # zip = serializers.CharField(max_length=10)
+    # company = serializers.CharField(max_length=100)
+    # user_type = serializers.CharField(max_length=255)
 
     # read_only ensures that the user cannot change the JWT
     token = serializers.CharField(max_length=255, read_only=True)
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'password', 'token')
+        fields = ('id', 'username', 'email', 'user_type', 'first_name', 'last_name', 'password', 'token')
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data) # keyword arguments
@@ -25,7 +34,6 @@ class LoginSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=255)
     password = serializers.CharField(max_length=255, write_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
-
 
     class Meta:
         model = User
