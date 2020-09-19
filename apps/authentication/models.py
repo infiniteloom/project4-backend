@@ -19,8 +19,8 @@ https://docs.djangoproject.com/en/3.0/ref/contrib/auth/#django.contrib.auth.mode
 # allows us to create a regular user or a superuser
 class UserManager(BaseUserManager):
 
-    def create_user(self, username, email, password=None, first_name=None, last_name=None):
-        # the above args indicate that the default values for first/last name and password are None
+    def create_user(self, email, username, password, first_name=None, last_name=None, county=None, city=None, zip=None, company=None, user_type='buyer'):
+        # the above args provide default values to accomodate a user type 'buyer' who would only have the email and password fields (email is assigned to also equal the value of username, from frontend)
         # indicates they are not required.
         if username is None:
             raise TypeError("Users must have a username.")
@@ -31,11 +31,15 @@ class UserManager(BaseUserManager):
         # create the user object
         # self.normalize_email is inbuilt method to django that strips white space and lowercases
         user = self.model(
-            username= username,
             email=self.normalize_email(email),
+            username=username,
             first_name=first_name,
             last_name=last_name,
-            is_staff=False
+            county=county,
+            city=city,
+            zip=zip,
+            company=company,
+            user_type=user_type
         )
 
         user.set_password(password)

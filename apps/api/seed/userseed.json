@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "email": "mika@mika.com",
-            "username": "mikamika",
+            "username": "mika@mika.com",
             "password": "buybuy123123",
             "first_name": "Mika",
             "last_name": "Akim",
@@ -22,7 +22,7 @@
         "pk": 2,
         "fields": {
             "email":"john@john.com",
-            "username":"johnjohn",
+            "username":"john@john.com",
             "password":"buybuy123123",
             "first_name":"John",
             "last_name":"Mistermister",
@@ -40,7 +40,7 @@
         "pk": 3,
         "fields": {
             "email":"hannah@hannah.com",
-            "username":"hannahhannah",
+            "username":"hannah@hannah.com",
             "password":"buybuy123123",
             "first_name":"Hannah",
             "last_name":"Lewis",
@@ -58,7 +58,7 @@
         "pk": 4,
         "fields": {
             "email":"nico@nico.com",
-            "username":"niconico",
+            "username":"nico@nico.com",
             "password":"buybuy123123",
             "first_name":"Nico",
             "last_name":"Matsuda",
@@ -76,7 +76,7 @@
         "pk": 5,
         "fields": {
             "email":"liza@liza.com",
-            "username":"lizaliza",
+            "username":"liza@liza.com",
             "password":"buybuy123123",
             "first_name":"liza",
             "last_name":"johnson",
@@ -94,7 +94,7 @@
         "pk": 6,
         "fields": {
             "email":"summer@summer.com",
-            "username":"summersummer",
+            "username":"summer@summer.com",
             "password":"buybuy123123",
             "first_name":"Summer",
             "last_name":"Akana",
@@ -112,7 +112,7 @@
         "pk": 7,
         "fields": {
             "email":"brendan@brendan.com",
-            "username":"brendanbrendan",
+            "username":"brendan@brendan.com",
             "password":"buybuy123123",
             "first_name":"Brendan",
             "last_name":"Muhly",
@@ -130,7 +130,7 @@
         "pk": 8,
         "fields": {
             "email":"jeremy@jeremy.com",
-            "username":"jeremyjeremy",
+            "username":"jeremy@jeremy.com",
             "password":"buybuy123123",
             "first_name":"Jeremy",
             "last_name":"Mendo",
@@ -148,7 +148,7 @@
         "pk": 9,
         "fields": {
             "email":"gina@gina.com",
-            "username":"ginagina",
+            "username":"gina@gina.com",
             "password":"buybuy123123",
             "first_name":"Gina",
             "last_name":"Kristin",
@@ -166,7 +166,7 @@
         "pk": 10,
         "fields": {
             "email":"sara@sara.com",
-            "username":"sarasara",
+            "username":"sara@sara.com",
             "password":"buybuy123123",
             "first_name":"Sara",
             "last_name":"Gold",
@@ -184,7 +184,7 @@
         "pk": 11,
         "fields": {
             "email":"michael@michael.com",
-            "username":"michaelmichael",
+            "username":"michael@michael.com",
             "password":"buybuy123123",
             "first_name":"Michael",
             "last_name":"Thayer",
@@ -202,7 +202,7 @@
         "pk": 12,
         "fields": {
             "email": "angel@angel.com",
-            "username": "angelangel",
+            "username": "angel@angel.com",
             "password": "buybuy123123",
             "user_type": "buyer",
             "created_at": "2020-09-17T10:17:12+0000",
@@ -214,7 +214,7 @@
         "pk": 13,
         "fields":{
             "email":"taylor@taylor.com",
-            "username":"taylortaylor",
+            "username":"taylor@taylor.com",
             "password":"buybuy123123",
             "user_type":"buyer",
             "created_at": "2020-09-17T10:17:12+0000",
@@ -226,7 +226,7 @@
         "pk": 14,
         "fields":{
             "email":"misty@misty.com",
-            "username":"mistymisty",
+            "username":"misty@misty.com",
             "password":"buybuy123123",
             "user_type":"buyer",
             "created_at": "2020-09-17T10:17:12+0000",

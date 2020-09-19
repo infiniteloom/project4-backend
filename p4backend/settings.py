@@ -44,9 +44,13 @@ INSTALLED_APPS = [
     'apps.authentication',
     'apps.api',
     'geopy',
+    'corsheaders',
 ]
 
+CORS_ALLOW_ALL_ORIGINS=True
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -122,7 +126,7 @@ REST_FRAMEWORK = {
     ),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 3
+    'PAGE_SIZE': 300
 }
 
 
