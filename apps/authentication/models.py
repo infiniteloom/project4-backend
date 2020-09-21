@@ -32,8 +32,8 @@ class UserManager(BaseUserManager):
         user = self.model(
             email=self.normalize_email(email),
             username=username,
-            first_name=first_name,
-            last_name=last_name,
+            # first_name=first_name,
+            # last_name=last_name,
             # county=county,
             # city=city,
             # zip=zip,
@@ -67,7 +67,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # these are all built in methods to the AbstractBaseUser
     email = models.EmailField(db_index=True, unique=True)
     username = models.CharField(db_index=True, max_length=255, unique=True)
-    first_name = models.CharField(max_length=255, null=True, blank=True)
+    first_name = models.CharField(max_length=235, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
