@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin
+    AbstractBaseUser, BaseUserManager, PermissionsMixin, AbstractUser
 )
 # allows us to access the JWT settings
 from rest_framework_jwt.settings import api_settings
@@ -19,7 +19,7 @@ https://docs.djangoproject.com/en/3.0/ref/contrib/auth/#django.contrib.auth.mode
 # allows us to create a regular user or a superuser
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, username, password, first_name=None, last_name=None, user_type='buyer'):
+    def create_user(self, email, username, county, city, zip, company, password, first_name=None, last_name=None, user_type='realtor' ):
 
         if username is None:
             raise TypeError("Users must have a username.")
@@ -34,10 +34,10 @@ class UserManager(BaseUserManager):
             username=username,
             first_name=first_name,
             last_name=last_name,
-            # county=county,
-            # city=city,
-            # zip=zip,
-            # company=company,
+            county=county,
+            city=city,
+            zip=zip,
+            company=company,
             user_type=user_type
         )
 
@@ -60,7 +60,7 @@ class UserManager(BaseUserManager):
 
 
 # This class is for people who are using the site, logging in etc. Not for superusers
-class User(AbstractBaseUser, PermissionsMixin):
+class User(AbstractUser):
 
     # db_index gives the user a unique index in the database
     # unique ensures the username doesn't already exist in database

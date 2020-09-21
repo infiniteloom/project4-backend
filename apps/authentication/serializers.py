@@ -11,11 +11,11 @@ class RegistrationSerializer(serializers.ModelSerializer):
     email = serializers.CharField(max_length=255)
     first_name = serializers.CharField(max_length=255)
     last_name = serializers.CharField(max_length=255)
-    # county = serializers.CharField(max_length=100)
-    # city = serializers.CharField(max_length=100)
-    # zip = serializers.CharField(max_length=10)
-    # company = serializers.CharField(max_length=100)
-    # user_type = serializers.CharField(max_length=255)
+    county = serializers.CharField(max_length=100)
+    city = serializers.CharField(max_length=100)
+    zip = serializers.CharField(max_length=10)
+    company = serializers.CharField(max_length=100)
+    user_type = serializers.CharField(max_length=255)
 
     # read_only ensures that the user cannot change the JWT
     token = serializers.CharField(max_length=255, read_only=True)
