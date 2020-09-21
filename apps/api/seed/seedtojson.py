@@ -72,7 +72,7 @@ with open('listings.csv', 'r') as csv_file:
                 "price":row[10],
                 "description":row[11],
                 "image1":row[12],
-                "realtor":2,
+                "realtor":realtor,
                 "created_at":'2020-09-16T19:24:17+0000',
                 "updated_at":"2020-09-16T19:24:17+0000"
             }
