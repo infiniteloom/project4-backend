@@ -8,10 +8,9 @@ class RegistrationSerializer(serializers.ModelSerializer):
         min_length=8,
         write_only=True
     )
-    # email = serializers.CharField(max_length=255, read_only=True)
-    # username = serializers.CharField(max_length=255)
-    # first_name = serializers.CharField(max_length=255)
-    # last_name = serializers.CharField(max_length=255)
+    email = serializers.CharField(max_length=255)
+    first_name = serializers.CharField(max_length=255)
+    last_name = serializers.CharField(max_length=255)
     # county = serializers.CharField(max_length=100)
     # city = serializers.CharField(max_length=100)
     # zip = serializers.CharField(max_length=10)
@@ -23,7 +22,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'user_type', 'first_name', 'last_name', 'password', 'token')
+        fields = ('id', 'username', 'email', 'user_type', 'first_name', 'last_name', 'password', 'token', "zip", "county", "city", "company")
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data) # keyword arguments

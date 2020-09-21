@@ -19,9 +19,8 @@ https://docs.djangoproject.com/en/3.0/ref/contrib/auth/#django.contrib.auth.mode
 # allows us to create a regular user or a superuser
 class UserManager(BaseUserManager):
 
-    def create_user(self, email, username, password, first_name=None, last_name=None, county=None, city=None, zip=None, company=None, user_type='buyer'):
-        # the above args provide default values to accomodate a user type 'buyer' who would only have the email and password fields (email is assigned to also equal the value of username, from frontend)
-        # indicates they are not required.
+    def create_user(self, email, username, password, first_name=None, last_name=None, user_type='buyer'):
+
         if username is None:
             raise TypeError("Users must have a username.")
         if email is None:
@@ -35,10 +34,10 @@ class UserManager(BaseUserManager):
             username=username,
             first_name=first_name,
             last_name=last_name,
-            county=county,
-            city=city,
-            zip=zip,
-            company=company,
+            # county=county,
+            # city=city,
+            # zip=zip,
+            # company=company,
             user_type=user_type
         )
 
