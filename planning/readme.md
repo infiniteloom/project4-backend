@@ -36,9 +36,9 @@ Link to project backend on GitHub [here](https://github.com/infiniteloom/project
 |       |                                                                  |            |
 | Day 2/3 | Use Beautiful Soup to scrape data, create csv for seed data set| Completed  |
 | Day 3 | Create seed data template                                        | Completed  |
-| Day 3 | Import seed data into database                                   | Incomplete |
+| Day 3 | Import seed data into database                                   | Completed |
 |       |                                                                  |            |
-| Day 3 |  Final testing of all end points                                 | Incomplete |
+| Day 3 |  Final testing of all end points                                 | Completed |
 
 
 
@@ -167,11 +167,12 @@ The backend functionality of Haven.com is divided into two separate lists: MPV a
 
 | Component                     | Priority | Estimated Time | Time Invested | Actual Time |
 | ----------------------------- | :------: | :------------: | :------------:| :---------: |
-| Import seed data csv    |    H     |     3 hr       |       hrs     |      hrs    |
-| Authorization app       |    H     |     2 hr       |       hrs     |      hrs    |
-| Realtor and buyer models|    H    |     3 hrs      |       hrs     |      hrs    |
-| Create full CRUD views for listings|  H  |     3 hrs      |       hrs     |      hrs    |
-| Total                   |          |     11 hrs     |       hrs     |      hrs    |
+| Scrape data for seed    |    H     |     4 hr       |       6hrs     |      6hrs    |
+| Import seed data csv    |    H     |     2 hr       |       2hrs     |      2hrs    |
+| Authorization app       |    H     |     2 hr       |       2hrs     |      2hrs    |
+| Realtor and buyer models|    H     |     3 hrs      |       2hrs     |      2hrs    |
+| Create full CRUD views for listings|  H  |     3 hrs      |       4hrs     |      4hrs    |
+| Total                   |          |     11 hrs     |       16hrs     |      16hrs    |
 
 #### PostMVP
 
@@ -183,18 +184,9 @@ The backend functionality of Haven.com is divided into two separate lists: MPV a
 
 ## Additional Libraries
 
+- Beautiful Soup (web scraper)
 - Geopy (create coordinates from listing's street addresses and connect with Open Street Map )
-- Django REST Framework 
-- Django REST Framework JWT
-
-## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description
+- Django REST Framework (to build REST API)
+- Django REST Framework JWT (create tokens for authorization)
 
 
-## Issues and Resolutions
-
-Use this section to list of all major issues encountered and their resolution.
-
-**ERROR**: 
-**RESOLUTION**:
